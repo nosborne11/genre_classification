@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nicholas.osborne/Documents/python/ML_Dev_Ops/genre_classification/mlruns/0/5723ea7240a64bd08afe3a7bafe636af/artifacts
+end_time: 1639508690640
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 5723ea7240a64bd08afe3a7bafe636af
+run_uuid: 5723ea7240a64bd08afe3a7bafe636af
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1639508673172
+status: 3
+tags: []
+user_id: nicholas.osborne

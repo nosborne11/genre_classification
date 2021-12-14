@@ -20,8 +20,8 @@ def go(config: DictConfig):
         # This was passed on the command line as a comma-separated list of steps
         steps_to_execute = config["main"]["execute_steps"].split(",")
     else:
-        #assert isinstance(config["main"]["execute_steps"], list)
-        steps_to_execute = config["main"]["execute_steps"]
+
+        steps_to_execute = list(config["main"]["execute_steps"])
 
     # Download step
     if "download" in steps_to_execute:
@@ -38,7 +38,6 @@ def go(config: DictConfig):
         )
 
     if "preprocess" in steps_to_execute:
-
         _ = mlflow.run(
             os.path.join(root_path, "preprocess"),
             "main",
@@ -51,7 +50,6 @@ def go(config: DictConfig):
         )
 
     if "check_data" in steps_to_execute:
-
         _ = mlflow.run(
             os.path.join(root_path, "check_data"),
             "main",
@@ -77,15 +75,12 @@ def go(config: DictConfig):
         )
 
     if "random_forest" in steps_to_execute:
-
         # Serialize decision tree configuration
         model_config = os.path.abspath("random_forest_config.yml")
 
         with open(model_config, "w+") as fp:
             fp.write(OmegaConf.to_yaml(config["random_forest_pipeline"]))
 
-        ## YOUR CODE HERE: call the random_forest step
-        pass
         _ = mlflow.run(
             os.path.join(root_path, "random_forest"),
             "main",
@@ -94,15 +89,13 @@ def go(config: DictConfig):
                 "model_config": model_config,
                 "export_artifact": config["random_forest_pipeline"]["export_artifact"],
                 "random_seed": config["main"]["random_seed"],
-                "val_size": config["data"]['val_size'],
+                "val_size": config["data"]["test_size"],
                 "stratify": config["data"]["stratify"]
             },
         )
 
     if "evaluate" in steps_to_execute:
 
-        ## YOUR CODE HERE: call the evaluate step
-        pass
         _ = mlflow.run(
             os.path.join(root_path, "evaluate"),
             "main",
