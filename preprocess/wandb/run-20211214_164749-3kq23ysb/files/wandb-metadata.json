@@ -1,0 +1,31 @@
+{
+    "os": "macOS-10.13.6-x86_64-i386-64bit",
+    "python": "3.9.7",
+    "heartbeatAt": "2021-12-14T14:47:50.693134",
+    "startedAt": "2021-12-14T14:47:49.619158",
+    "docker": null,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "--input_artifact",
+        "raw_data.parquet:latest",
+        "--artifact_name",
+        "preprocessed_data.csv",
+        "--artifact_type",
+        "preprocessed_data",
+        "--artifact_description",
+        "Data with preprocessing applied"
+    ],
+    "state": "running",
+    "program": "/Users/nicholas.osborne/Documents/python/ML_Dev_Ops/genre_classification/preprocess/run.py",
+    "codePath": "preprocess/run.py",
+    "git": {
+        "remote": "https://github.com/nosborne11/genre_classification.git",
+        "commit": "349b27a238d7e31e8de5b84fe9b6304fdf88e199"
+    },
+    "email": "nosborne11@gmail.com",
+    "root": "/Users/nicholas.osborne/Documents/python/ML_Dev_Ops/genre_classification",
+    "host": "MARK-C02X2U16JG5H.home",
+    "username": "nicholas.osborne",
+    "executable": "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-e6adcc02838efcb1b82de7d93d16d9713f052e81/bin/python"
+}

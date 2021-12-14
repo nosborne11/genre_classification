@@ -1,0 +1,35 @@
+2021-12-14 16:54:47,003 Downloading and reading artifact
+wandb: ERROR Project nosborne11/exercise_14 does not contain artifact: "preprocess.parquet:latest"
+Traceback (most recent call last):
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/normalize.py", line 24, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/public.py", line 520, in artifact
+    artifact = Artifact(self.client, entity, project, artifact_name)
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/public.py", line 2583, in __init__
+    self._load()
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/public.py", line 3097, in _load
+    raise ValueError(
+ValueError: Project nosborne11/exercise_14 does not contain artifact: "preprocess.parquet:latest"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nicholas.osborne/Documents/python/ML_Dev_Ops/genre_classification/segregate/run.py", line 122, in <module>
+    go(args)
+  File "/Users/nicholas.osborne/Documents/python/ML_Dev_Ops/genre_classification/segregate/run.py", line 21, in go
+    artifact = run.use_artifact(args.input_artifact)
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 1957, in use_artifact
+    artifact = public_api.artifact(type=type, name=name)
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/normalize.py", line 62, in wrapper
+    six.reraise(CommError, CommError(message, err), sys.exc_info()[2])
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/six.py", line 718, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/normalize.py", line 24, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/public.py", line 520, in artifact
+    artifact = Artifact(self.client, entity, project, artifact_name)
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/public.py", line 2583, in __init__
+    self._load()
+  File "/Users/nicholas.osborne/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/wandb/apis/public.py", line 3097, in _load
+    raise ValueError(
+wandb.errors.error.CommError: Project nosborne11/exercise_14 does not contain artifact: "preprocess.parquet:latest"
